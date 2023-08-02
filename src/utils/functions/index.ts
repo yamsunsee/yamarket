@@ -1,9 +1,8 @@
 import connectDatabase from "@/database";
 import { NextResponse } from "next/server";
-import { ProductType, ResponseType } from "../types";
-import { GET_PRODUCTS } from "../constants";
+import { HandleResponseType } from "../types";
 
-const handleResponse = ({ type, extraMessage, data }: ResponseType) => {
+const handleResponse = ({ type, extraMessage, data }: HandleResponseType) => {
   let status = 404;
   let message = extraMessage ?? type;
 
@@ -38,10 +37,4 @@ const handleRequest = async <T>(action?: () => Promise<T>) => {
   }
 };
 
-const getProducts = async (): Promise<ProductType[]> => {
-  const response = await fetch(GET_PRODUCTS, { cache: "no-store" }); //{ next: { revalidate: 3 } }
-  const { data } = await response.json();
-  return data;
-};
-
-export { handleRequest, handleResponse, getProducts };
+export { handleRequest, handleResponse };

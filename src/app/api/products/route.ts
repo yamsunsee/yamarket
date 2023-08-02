@@ -13,6 +13,6 @@ export async function POST(request: NextRequest) {
   return handleRequest(async () => {
     const body = await request.json();
     const newProduct = await Product.create(body);
-    return handleResponse({ type: "OK", data: newProduct });
+    return handleResponse({ type: "OK", extraMessage: "Product has been created!", data: newProduct });
   });
 }

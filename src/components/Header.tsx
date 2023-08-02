@@ -4,7 +4,7 @@ import ThemeSwitch from "./ThemeSwitch";
 
 const Header = () => {
   return (
-    <header className="flex justify-between">
+    <header className="flex justify-between border p-4">
       <h1>Yamarket</h1>
       <nav>
         <ul className="flex gap-4">
