@@ -1,7 +1,10 @@
+import useStore from "@/store";
 import { getProducts } from "@/utils/functions";
 
 export default async function Page() {
   const products = await getProducts();
+  const { setProducts } = useStore.getState();
+  setProducts(products);
 
   return (
     <main>

@@ -4,6 +4,8 @@ type ResponseType = {
   data?: any;
 };
 
+type ThemeType = "LIGHT" | "DARK";
+
 type ProductType = {
   _id: string;
   name: string;
@@ -14,8 +16,10 @@ type ProductType = {
 };
 
 type StoreType = {
-  theme: "LIGHT" | "DARK";
+  theme: ThemeType;
   products: ProductType[];
+  setTheme: (theme: ThemeType) => void;
+  setProducts: (products: ProductType[]) => void;
 };
 
 export type { ResponseType, ProductType, StoreType };

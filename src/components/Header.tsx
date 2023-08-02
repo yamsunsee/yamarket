@@ -1,6 +1,6 @@
 import { LINKS } from "@/utils/constants";
 import Link from "next/link";
-import React from "react";
+import ThemeSwitch from "./ThemeSwitch";
 
 const Header = () => {
   return (
@@ -15,6 +15,7 @@ const Header = () => {
           ))}
         </ul>
       </nav>
+      <ThemeSwitch />
     </header>
   );
 };

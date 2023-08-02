@@ -39,7 +39,7 @@ const handleRequest = async <T>(action?: () => Promise<T>) => {
 };
 
 const getProducts = async (): Promise<ProductType[]> => {
-  const response = await fetch(GET_PRODUCTS, { next: { revalidate: 3 } });
+  const response = await fetch(GET_PRODUCTS, { cache: "no-store" }); //{ next: { revalidate: 3 } }
   const { data } = await response.json();
   return data;
 };
